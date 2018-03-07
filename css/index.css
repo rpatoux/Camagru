@@ -1,0 +1,35 @@
+body
+{
+ background-color:grey;
+}
+
+#titre_milieu
+{
+    font-family: "Gill Sans", sans-serif;
+}
+
+#logofond
+{
+
+    position: relative;
+    width : 30vw;
+}
+
+.bande
+{
+    margin-top : 200px;
+}
+
+.button 
+{
+    border-radius: 3px;
+    position: relative;
+    top : 50px;
+    font-family: "Gill Sans", sans-serif;
+    background-color: #626262;
+    color: black;
+    padding: 5px 40px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+}
