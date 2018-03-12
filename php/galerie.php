@@ -76,8 +76,8 @@ if (!file_exists($t_url))
 						while ($res[--$i]['img'] && ++$nbr && $i >= 0)
 						{
 							$img = $res[$i]['img'];
-							$likes = get_likes_by_img($img);
-							$user_likes = get_user_likes_by_img($img);
+							$//likes = get_likes_by_img($img);
+							$///user_likes = get_user_likes_by_img($img);
 							$user_img = get_user_by_img($img);
 							$id_img = get_id_img_by_img($img);
 							if ($nbr > 2)

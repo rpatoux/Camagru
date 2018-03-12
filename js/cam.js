@@ -71,7 +71,7 @@ function define_source(here)
 		el.style.opacity = '0';
 		source = 0;
 	}
-	delete_wrong2();
+	// delete_wrong2();
 	delete_wrong();
 	replace_url();
 }
@@ -114,6 +114,9 @@ function delete_wrong()
 ///////////////////////////////////////////
 valide.addEventListener('click', function()
 {
+	echo(data);
+	echo(source);
+	echo(name);
 	if (data && source && name)
 	{
 		var xhr = getXMLHttpRequest();
@@ -224,10 +227,9 @@ function takepicture()
 	canvas.getContext('2d').drawImage(video, 0, 0, width, height);
 	data = canvas.toDataURL('image/png');
 	var xhr = getXMLHttpRequest();
+	console.log(xhr.responseText);
 	xhr.onreadystatechange = function()
 	{
-		objet.innerText = xhr.readyState;
-		objet.innerText = xhr.status;
 		 if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0))
 		 {
 			name = xhr.responseText;
@@ -251,7 +253,6 @@ function takepicture()
 	
 	/* creation url image */
 	xhr.send('data='+ data +'&source='+ source +'&value=0&name=1&x='+ x +'&y='+ y);
-	echo ("cool");
 	data = 1;
 	/* fin requete ajax */
 }
