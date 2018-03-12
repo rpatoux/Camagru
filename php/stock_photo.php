@@ -8,6 +8,7 @@ session_start();
 $id = $_SESSION['logged_on_user'];
 if(isset($_POST['data']) && isset($_POST['source']) && isset($_POST['value']) && isset($_POST['name']))
 {
+	
 	$x = $_POST['x'];
 	$y = $_POST['y'];
 	$data= $_POST["data"];

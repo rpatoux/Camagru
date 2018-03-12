@@ -54,6 +54,7 @@ function get_size(tail)
 
 function define_source(here)
 {
+	console.log(here);
 	source = here;
 	document.getElementById('sup_img').src = source;
 	document.getElementById('sup_img_2').src = source;
@@ -111,27 +112,27 @@ function delete_wrong()
 	}
 }
 ///////////////////////////////////////////
-// valide.addEventListener('click', function()
-// {
-// 	if (data && source && name)
-// 	{
-// 		var xhr = getXMLHttpRequest();
-// 		xhr.open("POST", "stock_photo.php", true); // true pour asynchrone
-// 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-// 		xhr.send('data='+data+'&name='+name+'&source='+source+'&value=1');
-// 		var list = document.getElementById('placehere');
-// 		var new_img = document.createElement("img");
-// 		new_img.setAttribute("src", name);
-// 		new_img.setAttribute('draggable', false);
-// 		var new_div = document.createElement('div');
-// 		new_div.setAttribute('class', 'button_supimg');
-// 		new_div.innerHTML = '<button type="submit" onclick="sub_img(this)">X</button>';
-// 		list.insertBefore(new_div, list.firstChild);
-// 		new_div.appendChild(new_img, new_div.firstChild);
-// 		photo.setAttribute('src', "");
-// 		data = 0;
-// 	}
-// },false);
+valide.addEventListener('click', function()
+{
+	if (data && source && name)
+	{
+		var xhr = getXMLHttpRequest();
+		xhr.open("POST", "stock_photo.php", true); // true pour asynchrone
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		xhr.send('data='+data+'&name='+name+'&source='+source+'&value=1');
+		var list = document.getElementById('placehere');
+		var new_img = document.createElement("img");
+		new_img.setAttribute("src", name);
+		new_img.setAttribute('draggable', false);
+		var new_div = document.createElement('div');
+		new_div.setAttribute('class', 'button_supimg');
+		new_div.innerHTML = '<button type="submit" onclick="sub_img(this)">X</button>';
+		list.insertBefore(new_div, list.firstChild);
+		new_div.appendChild(new_img, new_div.firstChild);
+		photo.setAttribute('src', "");
+		data = 0;
+	}
+},false);
 
 //////////////////////////////////////////////////////////////
 
@@ -237,20 +238,21 @@ function takepicture()
 			startbutton.style.background = 'lightgreen';
 			valide.style.background = 'lightgreen';
 		 }
-		// else
-		// {
-		// 	valide.disabled = true;
-		// 	startbutton.disabled = true;
-		// 	startbutton.style.background = 'red';
-		// 	valide.style.background = 'red';
-		// }
+		else
+		{
+			valide.disabled = true;
+			startbutton.disabled = true;
+			startbutton.style.background = 'red';
+			valide.style.background = 'red';
+		}
 	} 
 	xhr.open("POST", "stock_photo.php", true); // true pour asynchrone
 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	
 	/* creation url image */
-	xhr.send('data='+data+'&source='+source+'&value=0&name=1&x='+x+'&y='+y);
-	data  = 1;
+	xhr.send('data='+ data +'&source='+ source +'&value=0&name=1&x='+ x +'&y='+ y);
+	echo ("cool");
+	data = 1;
 	/* fin requete ajax */
 }
 

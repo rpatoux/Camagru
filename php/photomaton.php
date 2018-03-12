@@ -51,6 +51,7 @@
 			</div>
 			<div align="center" class="all" id="all">
 				<div class="image_montage">
+
 				<?php 
 					$all_file = scandir('../img');
 					$i = 2;
@@ -109,7 +110,7 @@
 						</div>
 						<div class="valide_photo">
 							<canvas id="canvas"></canvas>
-							<br/><button id="startbutton" class="button" name="photo" value="ok">Prendre une photo</button>
+							<br/><button id="startbutton" name="photo" value="ok">Prendre une photo</button>
 							<br><img id="photo">
 							<br><button id="valide" >Publier</button>
 						</div>
@@ -150,7 +151,7 @@
 						</div>
 					</div>
 				</div>
-				<script src="../js/no_cam.js"></script>
+				<!-- <script src="../js/no_cam.js"></script> -->
 				<script src="../js/cam.js"></script> 
 			</div>
 			<br><br><br><br><br>
