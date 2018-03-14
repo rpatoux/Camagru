@@ -1,12 +1,25 @@
 <?php 
 session_start();
+
 $url = $_SERVER[REQUEST_URI];
+// echo ($url);
+// echo "\n";
+// echo "\n";
 $url_2 = explode('/', $_SERVER[REQUEST_URI]);
-$_SESSION['url'] = 'http://localhost:8080/'.$url_2[1];
+// var_dump($url_2);
+// echo "\n";
+// echo ($url_2[1]);
+// echo($url_2[2]);
+$_SESSION['url'] = 'http://localhost:8080/'.$url_2[1].'/'.$url_2[2];
+// echo($_SESSION['url']);
 $t_url = $url_2[3].$url_2[4];
+// echo ($t_url);
+// echo "\n";
+$my_url = $_SESSION['url'];
+//var_dump($_SESSION['url']);
 if (!file_exists($t_url))
 {
-	header('location:'.$_SESSION['url']);
+header('location:'.$_SESSION['url']);
 }
 ?>
 <html>
@@ -24,10 +37,20 @@ if (!file_exists($t_url))
     		document.getElementById("connec_ok").style.visibility = "hidden";
 	}
 	</script>
+	<?php
+		if ($_SESSION["logged_on_user"])
+			echo "Connected";
+	?>
+	<p><i><?php 
+			$user = $_SESSION['user'];
+			if ($user)
+				echo '<a href="mon_compte.php">user : '.$user.'</a>';
+		?></i></p>
 		<center>
-			<div class="menu">
+		<img width="150px" id= "logofond" src="../img/camagru.png">
+			<div class="menu2">
 				<ul>
-					<li><a href="../index.php">Accueil</a></li>
+					<li><a href="../accueil.php">Accueil</a></li>
 					<?php
 						if ($_SESSION["logged_on_user"])
 						{
@@ -42,24 +65,30 @@ if (!file_exists($t_url))
 					?>
 					<li><a id="on" href="#">Galerie</a></li>
 				</ul>
-				<p><i><?php 
-					$user = $_SESSION['user'];
-					if ($user)
-						echo '<a href="mon_compte.php">user : '.$user.'</a>';
-				?></i></p>
 			</div>
 			<?php
+				if ($_SESSION['succes_new_p'] == 1)
+					echo '<br><div id="connec_ok">Votre mot de passe a ete réinitialiser</div>';
+				if ($_SESSION['error_mail'] == 1)
+					echo '<br><div id="need_connect">Ce mail n\'existe pas !</div>';
+				if ($_SESSION['succes_mail'] == 1)
+					echo '<br><div id="connec_ok">Un mail de reinitialisaton de mot de passe viens de vous être envoyé !</div>';
 				if ($_SESSION['valid'] == 1)
-					echo '<div id="connec_ok">inscription enregistrer !<br> Allez voir vos mails pour confirmer l\'inscription</div>';
+					echo '<div id="connec_ok">Inscription enregistrée <br> Allez voir vos mails pour confirmer l\'inscription</div>';
 				if ($_SESSION['valid'] == 2)
-					echo '<div id="connec_ok">connexion reussi !</div>';
+					echo '<div id="connec_ok">Connexion réussie</div>';
+				if ($_SESSION['valid'] == 9)
+					echo '<div id="connec_ok">Activation du compte Camagru confirmée</div>';
 				$_SESSION['valid'] = 0;
+				$_SESSION['error_mail'] = 0;
+				$_SESSION['succes_mail'] = 0;
+				$_SESSION['succes_new_p'] = 0;
 			?>
 			<div class="galerie" id="galerie">
 				<div id="need_connect"></div><br>
 				<?php
-					include '../function/image.php';
-					include '../function/user.php';
+					include 'image.php';
+					include 'user.php';
 
 					$id = $_SESSION['logged_on_user'];
 					$user = get_user_by_id($id);
@@ -76,8 +105,8 @@ if (!file_exists($t_url))
 						while ($res[--$i]['img'] && ++$nbr && $i >= 0)
 						{
 							$img = $res[$i]['img'];
-							$//likes = get_likes_by_img($img);
-							$///user_likes = get_user_likes_by_img($img);
+							$likes = get_likes_by_img($img);
+							$user_likes = get_user_likes_by_img($img);
 							$user_img = get_user_by_img($img);
 							$id_img = get_id_img_by_img($img);
 							if ($nbr > 2)
@@ -92,17 +121,17 @@ if (!file_exists($t_url))
 								echo '<div class="button_supimg"><button type="submit" onclick="sub_img(this)">X</button></div>';
 							}
 							$date['img_date'] = get_date_by_img($img);
-							echo '<div class=date>publie par <b>'.$user_img.'</b> le '.$date['img_date'][0].'</div>';
+							echo '<div class=date>Publié par <b>'.$user_img.'</b> le '.$date['img_date'][0].'</div>';
 									echo '<img src="'.$img.'">
 									<br/>
 									<div class="commentaire"><br>';
 									if (!strpos($user_likes, $user))
 									{
-										echo '<input id="likee" class="like" type="submit" onclick="add_like(this)" value="j\'aime"/>';
+										echo '<input id="likee" class="like" type="submit" onclick="add_like(this)" value="J\'aime"/>';
 									}
 									else
 									{
-										echo '<input id="dislikee" class="dislike" type="submit" onclick="sub_like(this)" value="j\'aime plus"/>';
+										echo '<input id="dislikee" class="dislike" type="submit" onclick="sub_like(this)" value="je n\'aime plus"/>';
 									}
 									echo '<br><div id="like">'.$likes.' Likes</div>
 										<input class="text_write" type="text" id="texte" name="texte" onKeyPress="if(event.keyCode == 13) add_comment(this)";"/>
@@ -121,19 +150,19 @@ if (!file_exists($t_url))
 										echo '<div class="shadow" id="comentaire_photo">';
 										if ($user == $comment[$j]['user'] || $user == 'root')
 										{
-											echo '<button id="'.$comment[$j]['id'].'" type="submit"  onclick="sub_commentaire(this)">X</button>';
+											echo '<button class="button_supimg" id="'.$comment[$j]['id'].'" type="submit"  onclick="sub_commentaire(this)">X</button>';
 										}
-										echo '<b>'.$comment[$j]['user'].' :</b> '.$comment[$j]['comments'].'</div>';
+										echo '<b>'.$comment[$j]['user'].' :</b> '.$comment[$j]['comments'].'</div><br>';
 									}
 									else
 									{
 										echo '<div class="comentaire_photo" id="comentaire_photo">';
 										if ($user == $comment[$j]['user'] || $user == 'root')
-											echo '<button id="'.$comment[$j]['id'].'" type="submit" onclick="sub_commentaire(this)">X</button>';
-										echo '<b>'.$comment[$j]['user'].' :</b> '.$comment[$j]['comments'].'</div>';
+											echo '<button class="button_supimg2" id="'.$comment[$j]['id'].'" type="submit" onclick="sub_commentaire(this)">X</button>';
+										echo '<b class="comentaire_photo">'.$comment[$j]['user'].' :</b> '.$comment[$j]['comments'].'</div><br>';
 									}
 								}
-								if ($nbr_com > 5)
+								if ($nbr_com > 3)
 								{
 									echo '<div class="comentaire_photo_2" ><a id="'.$i.'" onclick="plus_de_com(this)">plus de commentaires</a></div>';
 								}
@@ -143,11 +172,11 @@ if (!file_exists($t_url))
 						}
 						if ($pdf == 1)
 						{
-							echo '<a class="pdp" id="plus_de_photos" onclick="plus_de_photos(this)">Plus de photos</a>';
+							echo '<a class="pdp" id="plus_de_photos" onclick="plus_de_photos(this)">  Plus de photos  </a>';
 						}
 					}
 					else
-						echo '<div class="no_public" >Aucune photo publiee pour le moment</div>';
+						echo '<div class="no_public" >Aucune photo prise pour le moment, veuillez en prendre avec le Photomaton</div>';
 				?>
 			</div>
 			<script src="../js/commentary.js"></script>
@@ -158,21 +187,21 @@ if (!file_exists($t_url))
 					
 						<h3>Connexion</h3>
 						<div>
-							<?php
-								if ($_SESSION['error'] == 5)
-									echo '<label id="wrong_login">Mauvais mot de passe ou identifiant</label><br>';
-							?>
-							<label>Identidiant :&nbsp;</label>
-							<input type="text" placeholder="Entrez identifiant" name="user" required>
-							<br><label>Mot de passe : </label>
-							<input type="password" placeholder="Entrez mot de passe" name="password" required>
-							<br><button class="btn" type="submit" value="OK">Me connecter</button>
-							<br><a href="#code">Mot de passe oublie ?</a>
-							<br><a href="" class="quit" align="right">Fermer</a>
-              				<?php
-              				echo '<input style="display:none;" name="url" value="'.$url.'"/>';
-              				?>
-						</div>
+						<?php
+							if ($_SESSION['error'] == 5)
+								echo '<label id="wrong_login">  Mauvais mot de passe ou identifiant  </label><br><br>';
+						?>
+						<label>Identifiant : &nbsp;</label>
+						<input type="text" placeholder="Entrez identifiant" name="user" required>
+						<br><label>Mot de passe :&nbsp; </label>
+						<input type="password" placeholder="Entrez mot de passe" name="password" required>
+						<br><button class="button" class="btn" type="submit" value="OK">Me connecter</button>
+						<br><br><a href="#code" type="button" id="mdpoub">Mot de passe oublié ?</a><br><br><br>
+						<br><a href="" class="quit" type="button" id="cancelbtn">Fermer</a>
+						<?php
+						echo '<input style="display:none;" name="url" value="'.$url.'"/>';
+						?>
+					</div>
 					</form>
 				</div>
 			</div>

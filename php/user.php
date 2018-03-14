@@ -91,7 +91,6 @@
 	function select_id_user_from_mailandcode($mail, $code)
 	{
 		require '../database/connect_db.php';
-		//$mail = 
 		try 
 		{
 			$query = $db->prepare("SELECT id FROM user WHERE mail=:mail AND code=:code");

@@ -30,6 +30,7 @@ if ($mail)
 		{
 			die("Erreur ! : ".$e->getMessage() );
 		}
+		$_SESSION['url'] = 'http://localhost:8080';
 		$lien = $_SESSION['url'].'/php/active_link.php?code='.$code.'&mail='.$mail;
 		$message = 'Bonjour, veuillez cliquez sur le lien ci-dessous pour reinitialiser votre mot de passe '.PHP_EOL.$lien.PHP_EOL.'    Cordialement Camagru_staff.';
 		$subject = "nouveau mot de passe";

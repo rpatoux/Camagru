@@ -64,5 +64,8 @@ if ($password && $password2 && $code)
 	}
 }
 else
+{
+	// echo "BITE3";
 	header('Location:../accueil.php');
+}
 ?>

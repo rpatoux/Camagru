@@ -17,9 +17,9 @@
 	function sub_img($img)
 	{
 		require '../database/connect_db.php';
-
 		$likes = 0;
-		try{
+		try
+		{
 		$query= $db->prepare('DELETE FROM image WHERE img=:img');
 		$query->execute(array(':img' => $img));
 		}
@@ -28,39 +28,39 @@
 			die("Erreur ! : ".$e->getMessage() );
 		}
 	}
-	// function get_likes_by_img($img)
-	// {
-	// 	require '../database/connect_db.php';
+	function get_likes_by_img($img)
+	{
+		require '../database/connect_db.php';
 
-	// 	try{
-	// 		$query= $db->prepare('SELECT likes FROM image WHERE img=:img');
-	// 		$query->execute(array(':img' => $img));
-	// 		$likes = $query->fetch();
-	// 		$likes = $likes['likes'];
-	// 	}
-	// 	catch(PDOException $e)
-	// 	{
-	// 		die("Erreur ! : ".$e->getMessage() );
-	// 	}
-	// 	return ($likes);
-	// }
+		try{
+			$query= $db->prepare('SELECT likes FROM image WHERE img=:img');
+			$query->execute(array(':img' => $img));
+			$likes = $query->fetch();
+			$likes = $likes['likes'];
+		}
+		catch(PDOException $e)
+		{
+			die("Erreur ! : ".$e->getMessage() );
+		}
+		return ($likes);
+	}
 
-	// function get_user_likes_by_img($img)
-	// {
-	// 	require '../database/connect_db.php';
+	function get_user_likes_by_img($img)
+	{
+		require '../database/connect_db.php';
 
-	// 	try{
-	// 		$query= $db->prepare('SELECT user_likes FROM image WHERE img=:img');
-	// 		$query->execute(array(':img' => $img));
-	// 		$user_likes = $query->fetch();
-	// 		$user_likes = $user_likes['user_likes'];
-	// 	}
-	// 	catch(PDOException $e)
-	// 	{
-	// 		die("Erreur ! : ".$e->getMessage() );
-	// 	}
-	// 	return ($user_likes);
-	// }
+		try{
+			$query= $db->prepare('SELECT user_likes FROM image WHERE img=:img');
+			$query->execute(array(':img' => $img));
+			$user_likes = $query->fetch();
+			$user_likes = $user_likes['user_likes'];
+		}
+		catch(PDOException $e)
+		{
+			die("Erreur ! : ".$e->getMessage() );
+		}
+		return ($user_likes);
+	}
 	function get_id_img_by_img($img)
 	{
 		require '../database/connect_db.php';
@@ -93,36 +93,36 @@
 		}
 		return ($user_img);
 	}
-	// function get_user_by_id_com($id)
-	// {
-	// 	require '../database/connect_db.php';
+	function get_user_by_id_com($id)
+	{
+		require '../database/connect_db.php';
 
-	// 	try{
-	// 		$query= $db->prepare('SELECT user FROM comment WHERE id=:id');
-	// 		$query->execute(array(':id' => $id));
-	// 		$user = $query->fetch();
-	// 	}
-	// 	catch(PDOException $e){
-	// 		die("Erreur ! : ".$e->getMessage() );
-	// 	}
-	// 	$query->closeCursor();
-	// 	return ($user['user']);
-	// }
-	// function get_comment_by_id_img($id)
-	// {
-	// 	require '../database/connect_db.php';
+		try{
+			$query= $db->prepare('SELECT user FROM comment WHERE id=:id');
+			$query->execute(array(':id' => $id));
+			$user = $query->fetch();
+		}
+		catch(PDOException $e){
+			die("Erreur ! : ".$e->getMessage() );
+		}
+		$query->closeCursor();
+		return ($user['user']);
+	}
+	function get_comment_by_id_img($id)
+	{
+		require '../database/connect_db.php';
 
-	// 	try{
-	// 		$query= $db->prepare('SELECT * FROM comment WHERE id_img=:id_img');
-	// 		$query->execute(array(':id_img' => $id));
-	// 		$commentaires = $query->fetchall();
-	// 	}
-	// 	catch(PDOException $e){
-	// 		echo("Erreur ! : ".$e->getMessage() );
-	// 	}
-	// 	$query->closeCursor();
-	// 	return ($commentaires);
-	// }
+		try{
+			$query= $db->prepare('SELECT * FROM comment WHERE id_img=:id_img');
+			$query->execute(array(':id_img' => $id));
+			$commentaires = $query->fetchall();
+		}
+		catch(PDOException $e){
+			echo("Erreur ! : ".$e->getMessage() );
+		}
+		$query->closeCursor();
+		return ($commentaires);
+	}
 	function list_image()
 	{
 		require '../database/connect_db.php';

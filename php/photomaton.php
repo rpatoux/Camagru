@@ -1,6 +1,7 @@
 <?php
 	session_start(); 
 
+
 	var_dump($_SESSION['logged_on_user']);
 	if (!$_SESSION['logged_on_user'])
 		header('location:../index.php');
@@ -68,9 +69,9 @@
 				<div class="shadow3" id="radio">
 					<br><input type="radio" name="tail" value="100" onclick="get_size('100')">  SMALL
 					<input type="radio" name="tail" value="150" onclick="get_size('150')">  MEDIUM
-					<input type="radio" name="tail" value="250" onclick="get_size('200')">  LARGE
+					<input type="radio" name="tail" value="200" onclick="get_size('200')">  LARGE
 				</div>
-				<div class="cametphoto" id="cametphoto">
+				<div>
 					<div class="montage" id="placehere">
 					<?php 
 						include 'image.php';
@@ -79,8 +80,6 @@
 						$id = $_SESSION['logged_on_user'];
 						$user = get_user_by_id($id);
 						$res = get_img_by_user($user);
-						var_dump($res);
-						var_dump($user);
 						$i = 0;
 						while ($res[$i]['img'])
 						{
@@ -88,15 +87,16 @@
 						}
 						while ($res[--$i]['img'])
 						{
-							echo '<div class="button_supimg"><button type="submit" onclick="sub_img(this)">X</button>';
-							echo '<img draggable="false" src="'.$res[$i]['img'].'"></div>';
+							echo '<div class="button_supimg2"><button type="submit" onclick="sub_img(this)">X</button>';
+							echo '<img draggable="false" src="'.$res[$i]['img'].'"></div><br>';
 						}
 					?>
 					</div>
 					<!-- s'il y a une camera -->
-					<div id="container" class="container" style="display:none;">=
+					<div id="container" class="container" style="display:none;">
 						<div id="wrong">
 						</div>
+						<br><br>
 						<?php
 							if (strpos($_SERVER['HTTP_USER_AGENT'], "Android") || strpos($_SERVER['HTTP_USER_AGENT'], "iPod") || strpos($_SERVER['HTTP_USER_AGENT'], "iPhone") )
 								echo '<div class="cheat" id="cheat" onmousedown="drop(event)">';
@@ -110,7 +110,7 @@
 						</div>
 						<div class="valide_photo">
 							<canvas id="canvas"></canvas>
-							<br/><button id="startbutton" name="photo" value="ok">Prendre une photo</button>
+							<br/><button class="prendre" id="startbutton" name="photo" value="ok">Prendre une photo</button>
 							<br><img id="photo">
 							<br><button id="valide" >Publier</button>
 						</div>
@@ -151,8 +151,8 @@
 						</div>
 					</div>
 				</div>
-				<!-- <script src="../js/no_cam.js"></script> -->
-				<script src="../js/cam.js"></script> 
+				<script src="../js/no_cam.js"></script>
+				<!-- <script src="../js/cam.js"></script> -->
 			</div>
 			<br><br><br><br><br>
 		<div>

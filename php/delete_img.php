@@ -3,14 +3,19 @@ include 'image.php';
 
 session_start();
 
+echo ($_POST['img']);
+echo "\n";
 $user = $_SESSION['user'];
 $id_user = $_SESSION['id'];
 if(isset($_POST['img']))
 {
+	
 	$img = $_POST['img'];
 	$user_img = get_user_by_img($img);
 	if ($user === $user_img || $user === 'root')
 	{
+		echo ($img);
+		echo "\n";
 		sub_img($img);
 		unlink($img);
 		echo 'yes';

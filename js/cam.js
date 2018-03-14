@@ -33,7 +33,7 @@ function replace_url()
 		else if (good_img.indexOf(".png"))
 			good_img = good_img.replace(".png", "2.png");
 	}
-	else if (size == '250' && good_img.indexOf("3.png") == -1)
+	else if (size == '200' && good_img.indexOf("3.png") == -1)
 	{
 		if (good_img.indexOf("2.png") > 0)
 			good_img = good_img.replace("2.png", "3.png");
@@ -54,7 +54,6 @@ function get_size(tail)
 
 function define_source(here)
 {
-	console.log(here);
 	source = here;
 	document.getElementById('sup_img').src = source;
 	document.getElementById('sup_img_2').src = source;
@@ -101,6 +100,37 @@ function drop(e)
 		   dat.style.top = y + 'px';
 	   }
 }
+function reFresh() 
+{
+	location.reload(true)
+}
+
+function sub_img(objet)
+{
+	if (confirm("Voulez-vous vraiment supprimer cette photo ??"))
+	{
+		var parent = objet.parentNode;
+		var img = parent.childNodes[1].src;
+		img = img.split("/");
+		img = '/'+img[4];
+		img = '../montage'+img;
+		var xhr = getXMLHttpRequest();
+		xhr.onreadystatechange = function()
+		{
+			if(xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0))
+			{
+				if (xhr.responseText == 'yes')
+				{
+					parent.parentNode.removeChild(parent);
+					reFresh;
+				}
+			}
+		}
+		xhr.open("POST", "delete_img.php", true);
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		xhr.send('img='+img);
+	}
+}
 function delete_wrong()
 {
 	var length = document.getElementById('wrong').childNodes.length;
@@ -114,9 +144,7 @@ function delete_wrong()
 ///////////////////////////////////////////
 valide.addEventListener('click', function()
 {
-	echo(data);
-	echo(source);
-	echo(name);
+
 	if (data && source && name)
 	{
 		var xhr = getXMLHttpRequest();
@@ -227,7 +255,6 @@ function takepicture()
 	canvas.getContext('2d').drawImage(video, 0, 0, width, height);
 	data = canvas.toDataURL('image/png');
 	var xhr = getXMLHttpRequest();
-	console.log(xhr.responseText);
 	xhr.onreadystatechange = function()
 	{
 		 if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0))
@@ -261,7 +288,6 @@ function takepicture()
 
 startbutton.addEventListener('click', function(ev)
 {	
-	console.log(source);
 	if (source)
 	{
 		if (data == 1)

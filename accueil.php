@@ -75,24 +75,24 @@
 					</form>
 				</div>
 			</div>
-			<!-- <?php
+			<?php
 				if ($_SESSION['succes_new_p'] == 1)
-					echo '<br><div id="mail_envoye">Votre mot de passe a ete reinitialiser</div>';
+					echo '<br><div id="connec_ok">Votre mot de passe a ete réinitialiser</div>';
 				if ($_SESSION['error_mail'] == 1)
 					echo '<br><div id="need_connect">Ce mail n\'existe pas !</div>';
 				if ($_SESSION['succes_mail'] == 1)
-					echo '<br><div id="mail_envoye">Un mail de reinitialisaton de mot de passe viens de vous etre envoye !</div>';
+					echo '<br><div id="connec_ok">Un mail de reinitialisaton de mot de passe viens de vous être envoyé !</div>';
 				if ($_SESSION['valid'] == 1)
-					echo '<div id="connec_ok">Inscription enregistrer !<br> Allez voir vos mails pour confirmer l\'inscription</div>';
+					echo '<div id="connec_ok">Inscription enregistrée <br> Allez voir vos mails pour confirmer l\'inscription</div>';
 				if ($_SESSION['valid'] == 2)
-					echo '<div id="connec_ok">Connexion reussi !</div>';
+					echo '<div id="connec_ok">Connexion réussie</div>';
 				if ($_SESSION['valid'] == 9)
-					echo '<div id="connec_ok">Compte Camagru confirmer, felicitation !</div>';
+					echo '<div id="connec_ok">Activation du compte Camagru confirmée</div>';
 				$_SESSION['valid'] = 0;
 				$_SESSION['error_mail'] = 0;
 				$_SESSION['succes_mail'] = 0;
 				$_SESSION['succes_new_p'] = 0;
-			?> -->
+			?>
 			<div id="contenu">
 				<p>Camagru est une application web qui permet de faire des montages photos directement depuis votre webcam</p><br>
 				<p>Si vous n'avez pas de webcam, vous pouvez uploader les photos que vous souhaitez modifier</p><br>
@@ -114,8 +114,8 @@
 							if ($_SESSION['error'] == 4)
 								echo '<label id="wrong_login">Mail invalide</label><br><br>';
 							if ($_SESSION['error'] == 5)
-							// 	echo '<label id="wrong_login">Votre identifiant ne doit contenir que des lettres</label><br><br>';
-							// if ($_SESSION['error'] == 6)
+								echo '<label id="wrong_login">Votre identifiant ne doit contenir que des lettres</label><br><br>';
+							if ($_SESSION['error'] == 6)
 								echo '<label id="wrong_login">Votre identifiant ne doit contenir 10 caracteres maximum</label><br><br>';
 							if ($_SESSION['error'] == 7)
 								echo '<label id="wrong_login">Votre mot de passe ne doit contenir que des lettres et des chiffres</label><br><br>';

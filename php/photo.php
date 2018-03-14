@@ -25,6 +25,12 @@
 		fwrite($handle, $str);
 		fclose($handle);
  	}
+	function delete_http($source)
+	{
+		$replace = "../";
+		$sour = substr_replace($source,$replace, 0, 22);
+		return $sour;
+	}
 
  	function get_extention($image)
  	{
@@ -41,23 +47,35 @@
  	}
  	function write_png_to_photo($source, $photo, $x, $y)
  	{
+		$source = delete_http($source);
 		$source = imagecreatefrompng($source);
+		
 		$largeur_source = imagesx($source);
 		$hauteur_source = imagesy($source);
 		imagealphablending($source, true);
 		imagesavealpha($source, true);
 		$type = get_extention($photo);
 		if ($type == ".png")
+		{
 			$destination = imagecreatefrompng($photo);
-		if ($type == ".jpeg" || $type == '.jpg')	
+		}
+		if ($type == ".jpeg" || $type == '.jpg')
+		{
 			$destination = imagecreatefromjpeg($photo);
+		}
 		if ($type == ".gif")
+		{
 			$destination = imagecreatefromgif($photo);
+		}
 		imagecopy($destination, $source, $x, $y, 0, 0, $largeur_source, $hauteur_source);
 		if ($type == ".png")
+		{
 			imagepng($destination, $photo);
+		}
 		if ($type == ".jpeg" || $type == '.jpg')
+		{
 			imagejpeg($destination, $photo);
+		}
 		if ($type == ".gif")
 			imagegif($destination, $photo);
 		imagedestroy($source);

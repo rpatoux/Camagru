@@ -267,7 +267,14 @@ menu2 a:hover:not(.active)
 
 #wrong2
 {
-	color : red;
+	color : #333;
+	width : 100%;
+	background-color: grey;
+}
+
+#wrong
+{
+	color :#696969;
 }
 
 #wrong_login
@@ -280,10 +287,16 @@ menu2 a:hover:not(.active)
 {
 	margin : 0 auto;
 	padding : 30px;
+	width : 40%;
+	background-color: #333;
+	color: white;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 footer
 {
+	z-index : 3;
     right : 100px;
     position: fixed;
     left: 0;
@@ -332,6 +345,38 @@ button
 button:hover 
 {
     opacity: 1;
+}
+
+.button_supimg2
+{
+	width : 95%;
+	border-radius: 4px;
+	background-color: #B22222;
+	color : #333;
+}
+
+.button_supimg
+{
+	text-align: right;
+	
+}
+.button_supimg button
+{
+
+	margin-top : 0px;
+	border-radius: 4px;
+	background-color: #B22222;
+	color : #333;
+	width : 40px;
+	height : 40px;
+}
+.button_supimg2 button
+{
+
+	margin-top : 0px;
+	border-radius: 4px;
+	background-color: #B22222;
+	color : #333;
 }
 
 @media all and(max-width: 850px)
@@ -448,12 +493,11 @@ comentaire_photo
 	margin-top: 2px;
 	text-align: left;
 	padding-left: 30px;
-	color : black;
-	padding : 5px;
-	width : 400px;
+	color : white;
+	width : 200px;
 	font-size : 14px;
 	word-wrap: break-word;
-	border-bottom:1px dashed rgb(206, 181, 139);
+	border-bottom:1px dashed white;
 }
 .comentaire_photo_2
 {
@@ -465,6 +509,39 @@ comentaire_photo
 	padding : 5px;
 	width : 400px;
 	cursor: pointer;
+}
+
+.no_public
+{
+	margin-top: 150px;
+	margin-bottom: 150px;
+	font-size : 15px;
+	color : white;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.date
+{
+	margin-top : 10px;
+	margin-bottom :10px;
+	color :white;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 15px;
+}
+.date b
+{
+	color : black;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#connec_ok
+{
+	background-color: rgba(255,255,255,0.7);
+	width : auto;
+	height : auto;
+	color : #333;
+	font-size: 20px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #plus_de_com
@@ -490,11 +567,12 @@ comentaire_photo
 
 .ensemble_photo
 {
-	background-color: rgb(252, 252, 245); 
+	border-radius: 7px;
+	background-color: #333;
 	margin-top: 0px;
 	width : 500px;
 	margin-bottom: 70px;
-	border : 1px solid rgb(122, 68, 8);
+	border : 2px solid #696969;
 	position:relative;-webkit-animation:animatebottom 0.4s;animation:animatebottom 0.4s}
 @-webkit-keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0px;opacity:1}}
 @keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
@@ -527,6 +605,11 @@ comentaire_photo
 	cursor : pointer;
 }
 
+.valide_photo
+{
+	background-color: #333;
+}
+
 canvas
 {
 	display : none;
@@ -534,19 +617,26 @@ canvas
 
 #pas_de_cam
 {
+	border: 2px solid #696969;
+	background-color: #333;
 	overflow : hidden;
 	padding-top: 30px;
-	margin-left: 5%;
 	float : left;
 	width : 50%;
 	min-width : 450px;
-	margin-top: 50px;
-	border : 1px solid black;
+	margin-top : 50px;
+}
+
+#pas_de_cam button
+{
+	background-color : grey;
 }
 
 .montage
 {
-	background-color: red;
+	border-radius : 2px;
+	border : 2px solid #696969;
+	background-color: #333;
 	margin-right: 3%;
 	margin-top: 50px;
 	padding : 20px;
@@ -563,8 +653,8 @@ canvas
 	width : 100%;
 	max-width: 400px;
 	margin-bottom: 30px;
-	border : 2px solid orange;
-	border-radius: 10px;
+	border : 2px solid #696969;
+	border-radius: 3px;
 }
 
 .image_montage
@@ -606,15 +696,21 @@ canvas
 
 #container
 {
+	border: 2px solid #696969;
+	background-color: #333;
 	overflow : hidden;
 	padding-top: 30px;
 	float : left;
 	width : 50%;
 	min-width : 450px;
 	margin-top : 50px;
-	border-width:10px;
 }
 
+
+#container button
+{
+	background-color : grey;
+}
 .cheat video
 {
 	border : 2px solid #333;
@@ -658,6 +754,25 @@ canvas
 	top : 100px;
 }
 
+.like
+{
+	border : none;
+	border-radius : 5px;
+	width : 50px;
+	background-color: #6495ED;
+	cursor : pointer;
+}
+
+.dislike
+{
+	border : none;
+	border-radius : 5px;
+	width : 85px;
+	background-color: #f44336;
+	cursor : pointer;
+}
+
+
 #sup_img_2
 {
 	width : 100px;
@@ -665,6 +780,13 @@ canvas
 	z-index: 2;
 	left : 150px;
 	top : 100px;
+}
+
+.text_write
+{
+	color : black;
+	background-color: #333;
+    resize: none;
 }
 
 .sup_img_cur
@@ -685,6 +807,18 @@ canvas
 	font-size : 12
 	cursor : pointer;
 } */
+
+.pdp
+{
+	border-radius: 2px;
+	width : 50px;
+	height : 20px;
+	font-size: 17px;
+	color : white;
+	background-color: #333;
+	cursor: pointer;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
 
 .up_form
 {

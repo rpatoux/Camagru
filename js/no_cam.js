@@ -63,13 +63,18 @@ function drop2(e)
 
 function get_name()
 {
-	if (document.getElementById('photo_up').src != '')
-	{
+	// if (document.getElementById('photo_up').src != '')
+	// {
+		console.log(src);
 		name2 = document.getElementById('photo_up').src;
 		var res = name2.split("/");
 		name2 = '/'+res[4]+'/'+res[5];
 		name2 = '../'+name2;
-	}
+		console.log(res);
+		console.log(res[4]);
+		console.log(res[5]);
+		console.log(name2);
+	// }
 }
 upload_photo.addEventListener('click', function()
 {
@@ -77,6 +82,7 @@ upload_photo.addEventListener('click', function()
 	el.style.visibility = "visible";
 	el.style.opacity = '1';
 },false);
+
 
 function add_wrong_3()
 {
@@ -89,7 +95,7 @@ function add_wrong_3()
 	}
 	var z = document.createElement('div');
 	var list = document.getElementById('wrong2');
-	z.innerHTML = "telechargez une image";
+	z.innerHTML = "Téléchargez d'abord une image";
 	list.appendChild(z);
 	list.insertBefore(z, list.firstChild);
 
@@ -166,7 +172,7 @@ function takepicture2()
 
 startbutton2.addEventListener('click', function(ev)
 {	
-	get_name();
+	// get_name();
 	if (source && name2 != null)
 	{
 		var xhr = getXMLHttpRequest();

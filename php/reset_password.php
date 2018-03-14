@@ -1,7 +1,8 @@
 <?php
 session_start();
- if (!$_SESSION['code'])
- 	header('location:../accueil.php');
+//  if (!$_SESSION['code'])
+// 	 header('location:../accueil.php');
+ var_dump($_SESSION['code']);
 $url_2 = explode('/', $_SERVER[REQUEST_URI]);
 $t_url = $url_2[3].$url_2[4];
 if (!file_exists($t_url))
@@ -17,6 +18,17 @@ if (!file_exists($t_url))
 		<link type="text/css" href="../accueil.css" media="all" rel="stylesheet"/>
 	</head>
 	<body>
+	<?php
+		if ($_SESSION["logged_on_user"])
+			echo "Connected";
+	?>
+	<p><i><?php 
+			$user = $_SESSION['user'];
+			if ($user)
+				echo '<a href="mon_compte.php">user : '.$user.'</a>';
+		?></i></p>
+		<center>
+		<img width="150px" id= "logofond" src="../img/camagru.png">
 		<center>
 			<div class="menu2">
 				<ul>
@@ -46,13 +58,14 @@ if (!file_exists($t_url))
 					echo '<br><div id="need_connect">Le mot de passe doit contenir que des chiffres et des lettres</div>';
 				$_SESSION['error_new_p'] = 0;
 			?>
+			<br><br><br><br>
 				<div>
 					<form class="reset_pass" action="reset_pass.php" method="post" target="_self">
-						<h2>Reinitialiser mon mot de passe</h2>
+						<h2 >Réinitialiser mon mot de passe</h2>
 						<div>
 							<label>Mot de passe : </label>
 							<input type="password" placeholder="Entrez mot de passe" name="password" required>
-							<br><br><label>Repetez mot de passe : </label>
+							<br><br><label>Répetez mot de passe : </label>
 							<input type="password" placeholder="Entrez mot de passe" name="password2" required>
 							<?php 
 								$code = $_GET['code'];
