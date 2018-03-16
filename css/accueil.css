@@ -136,7 +136,7 @@ h3
 	width : 250px;
 	height : 65px;
 	background-color: #333;
-	border : 2px solid #ddd;
+	border : 2px solid #696969;
 }
 
 .shadow
@@ -152,7 +152,11 @@ h3
 	opacity : 0;
 	z-index : 2;
 }
-
+.error_mc
+{
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color : white;
+}
 .nodisplay
 {
     display : none;
@@ -202,9 +206,9 @@ ul
 {
 	overflow : hidden;
 	width : 1750px;
-	min-width : 850px;
+	/* min-width : 850px; */
 }
-
+/* 
 @media all and (max-width: 790px)
 {
 	.galerie
@@ -233,7 +237,7 @@ ul
 	{
 		display : block;
 	}
-}
+} */
 
 .menu2
 {
@@ -303,7 +307,7 @@ menu2 a:hover:not(.active)
 .reset_pass
 {
 	margin : 0 auto;
-	padding : 30px;
+	padding : 50px 50px 70px 50px;
 	width : 40%;
 	background-color: #333;
 	color: white;
@@ -383,16 +387,240 @@ button:hover
 	border-radius: 4px;
 	background-color: #B22222;
 	color : #333;
+	padding : 10px 10px 10px 10px;
 }
 
-@media all and(max-width: 850px)
+.button_sup3 
+{
+	border : 1px solid grey;
+	width : 100%;
+	font-size : 15px;
+	margin-top : 10px;
+	border-radius: 4px;
+	background-color: #B22222;
+	color : white;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.button_sup4 
+{
+	border : 1px solid grey;
+	width : 100%;
+	font-size : 15px;
+	margin-top : 10px;
+	border-radius: 4px;
+	background-color: green;
+	color : white;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.div_montage
+{
+	width :100%;
+}
+
+#placehere.montage
+{
+	float : right;
+	width: 400px;
+	height : 750px;
+	margin-right : 150px;
+}
+@media all and (max-width: 500px)
+{
+	.all
+	{
+		width :500px;
+	}
+	.menu2
+	{
+		width : 500px;
+	}
+	#phrase
+	{
+		font-size: 20px;
+	}
+	#logofond
+	{
+		width : 200px;
+	}
+	.mycompte
+	{
+		width : 100%;
+		font-size: 30px;
+		margin : 0;
+		padding: 0;
+	}
+	menu2
+	{
+		width : 100px;
+	}
+	ul
+	{
+		width : 600px;
+	}
+	li
+	{
+		width : 25%;
+	}
+	a
+	{
+		width : 25%;
+	}
+	.div_montage
+	{
+		width :500px;
+		height : 300px;
+	}
+	#placehere.montage
+	{
+		width: 400px;
+		height : 400px;
+		margin-right : 20px;
+	}
+	#container
+	{
+		display: block;
+		margin-bottom : 250px;
+		margin-left : 100px;
+	}
+	.photo_bouton 
+	{
+		margin-top: 20px;
+		float: left;
+		width: 50px;
+		height: 50px;
+	}
+	.image_montage
+	{
+		min-width : 100px;
+	}
+	#superpose 
+	{
+		width : 200px;
+	}
+	.montage
+	{
+		left : -40px;
+	}
+	.button_supimg
+	{
+		text-align: right;
+		width : 400px;
+		
+	}
+	#contenu
+	{
+		margin-bottom : 200px;
+	}
+}
+
+@media all and (min-width: 980px) and (max-width: 1410px)
+{
+	#placehere.montage
+	{
+		width : 80%;
+		height : 400px;
+		margin-left : 100px;
+		margin-right : 60px;
+	}
+	.button_supimg
+	{
+		text-align: right;
+		width : 400px;
+		
+	}
+	#container.container
+	{
+		width : 80%;
+		margin-left : 12%;
+	}
+}
+@media all and (min-width: 500px) and (max-width: 980px)
+{
+	.all
+	{
+		width :980px;
+	}
+	.menu2
+	{
+		width : 980px;
+	}
+	#phrase
+	{
+		font-size: 30px;
+	}
+	#logofond
+	{
+		width : 300px;
+	}
+	.mycompte
+	{
+		width : 100%;
+		font-size: 50px;
+		margin : 0;
+		padding : 0;
+	}
+	menu2
+	{
+		width : 100px;
+	}
+	ul
+	{
+		width : 100%;
+	}
+	li 
+	{
+		width : 23%;
+	}
+	.div_montage
+	{
+		width :980px;
+		height : 300px;
+	}
+	#placehere.montage
+	{
+		width: 700px;
+		height : 400px;
+		margin-right : 100px;
+	}
+	#container
+	{
+		display: block;
+		margin-bottom : 250px;
+		margin-left : 250px;
+	}
+	#superpose 
+	{
+		width : 600px;
+	}
+	.montage
+	{
+		left : -100px;
+	}
+	.button_supimg
+	{
+		text-align: right;
+		width : 400px;
+		
+	}
+	#contenu
+	{
+		margin-bottom : 200px;
+	}
+}
+
+/* #placehere.montage
+{
+	width : 500px;
+} */
+
+/* @media all and (max-width: 850px)
 {
 	.montage
 	{
 		padding: 0; 
 	}
-}
-
+} */
+/* 
 @media all and (max-width: 790px)
 {
 	.galerie
@@ -421,7 +649,7 @@ button:hover
 	{
 		display : block;
 	}
-}
+} */
 
 /* Extra styles for the cancel button */
 #cancelbtn 
@@ -490,7 +718,7 @@ button:hover
     display: table;
 }
 
-/* Change styles for cancel button and signup button on extra small screens */
+Change styles for cancel button and signup button on extra small screens
 @media screen and (max-width: 300px) 
 {
     .cancelbtn, .signupbtn 
@@ -518,9 +746,17 @@ button:hover
 	height : 300px;
 	max-width: 400px;
 }
-
-comentaire_photo
+#comentaire_photo.comentaire_photo
 {
+	color :white;
+	background-color : #696969;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius : 3px;
+}
+/* comentaire_photo
+{
+	
 	margin-top: 2px;
 	text-align: left;
 	padding-left: 30px;
@@ -533,14 +769,14 @@ comentaire_photo
 .comentaire_photo_2
 {
 	margin-top: 2px;
+	text-align: left;
 	padding-left: 30px;
-	color : black;
-	font-size: 18px;
-	text-decoration: underline;
-	padding : 5px;
-	width : 400px;
-	cursor: pointer;
-}
+	color : white;
+	width : 200px;
+	font-size : 14px;
+	word-wrap: break-word;
+	border-bottom:1px dashed white;
+} */
 
 .pdp_img
 {
@@ -671,15 +907,14 @@ canvas
 
 .montage
 {
+
 	border-radius : 2px;
 	border : 2px solid #696969;
 	background-color: #333;
 	margin-right: 3%;
 	margin-top: 50px;
 	padding : 20px;
-	float : right;
 	width : 400px;
-	min-width : 240px;
 	overflow : auto;
 	overflow-x: hidden;
 	height : 830px;
@@ -698,7 +933,7 @@ canvas
 {
 	margin-top: 50px;
 	height : 150px;
-	width : 800px;
+	width : 50%;
 	overflow: auto;
 	border-radius: 20px;
 	background-color: #333;
@@ -738,9 +973,10 @@ canvas
 	overflow : hidden;
 	padding-top: 30px;
 	float : left;
-	width : 800px;
-	min-width : 450px;
+	width : 50%;
 	margin-top : 50px;
+	margin-left : 100px;
+	margin-bottom : 200px;
 }
 
 

@@ -15,6 +15,11 @@ function wrong_password($password)
 		$_SESSION['error_new_p'] = 3;
 		return false;
 	}
+	// if (preg_match( "/[0-9]{1,2}$/", $password) == false)
+	// {
+	// 	$_SESSION['error_new_p'] = 4;
+	// 	return false;
+	// }
 	return true;
 }
 $password = $_POST['password'];

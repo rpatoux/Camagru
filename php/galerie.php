@@ -239,8 +239,8 @@ if ($url_2[2] == 'galerie.php' && $url_2[3])
 						<div>
 							<label>Adresse Mail : </label>
 							<input type="text" placeholder="Entrez votre mail" name="mail" required>
-							<button class="btn" type="submit" value="OK">Envoyer un mail</button>
-              				<a href="galerie.php" class="quit">Fermer</a>
+							<button class="signupbtn" type="submit" value="OK">Envoyer un mail</button>
+							<br><a href="" class="quit" type="button" id="cancelbtn">Fermer</a>
               				<?php
               				echo '<input style="display:none;" name="url" value="'.$url.'"/>';
               				?>

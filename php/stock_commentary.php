@@ -2,7 +2,7 @@
 require '../database/connect_db.php';
 include 'user.php';
 include 'image.php';
-//include 'mail.php';
+include 'send_mail.php';
 
 session_start();
 
@@ -37,13 +37,15 @@ if(isset($_POST['img']) && isset($_POST['text']))
 		{
 			die("Erreur ! : ".$e->getMessage() );
 		}
-		// if ($user != $user_img)
-		// {
-		// 	$mail = get_mail_by_user($user_img);
-		// 	$message = 'Une de vos photos vient d\'etre commentee par '.$user.'!'." Message : ".$comments;
-		// 	$subject = "nouveau commentaire";
-		// 	send_mail($mail, $message, $subject);
-		// }
+		echo($user);
+		echo($user_img);
+		if ($user != $user_img)
+		{
+			$mail = get_mail_by_user($user_img);
+			$message = 'Une de vos photos vient d\'etre commentee par '.$user.'!'."              Message : ".$comments;
+			$subject = "nouveau commentaire";
+			send_mail($mail, $message, $subject);
+		}
 		$response = ["$user :  $comments","$id"];
 		echo json_encode($response);
 	}

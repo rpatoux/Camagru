@@ -16,6 +16,11 @@ function wrong_pass($password)
 		$_SESSION['error'] = 1;
 		return false;
 	}
+	if (preg_match( "/[0-9]{1,2}$/", $password) == false)
+	{
+		$_SESSION['error'] = 8;
+		return false;
+	}
 	if (preg_match('/^[a-zA-Z0-9]*$/', $password) == false)
 	{
 		$_SESSION['error'] = 7;
@@ -46,11 +51,6 @@ function wrong_user($user)
 		$_SESSION['error'] = 5;
 		return false;
 	}
-	// if (strlen($user) > 10);
-	// {
-	// 	$_SESSION['error'] = 6;
-	// 	return false;
-	// }
 	return true;
 }
 function wrong_mail($mail)

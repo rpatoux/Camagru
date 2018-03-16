@@ -116,9 +116,11 @@
 							if ($_SESSION['error'] == 5)
 								echo '<label id="wrong_login">Votre identifiant ne doit contenir que des lettres</label><br><br>';
 							if ($_SESSION['error'] == 6)
-								echo '<label id="wrong_login">Votre identifiant ne doit contenir 10 caracteres maximum</label><br><br>';
+								echo '<label id="wrong_login">Votre identifiant ne doit contenir que 10 caracteres maximum</label><br><br>';
 							if ($_SESSION['error'] == 7)
 								echo '<label id="wrong_login">Votre mot de passe ne doit contenir que des lettres et des chiffres</label><br><br>';
+							if ($_SESSION['error'] == 8)
+								echo '<label id="wrong_login">Votre mot de passe doit contenir un ou deux chiffres</label><br><br>';
 							$_SESSION['error'] = 0;
 						?>
 						<div>
@@ -144,7 +146,7 @@
 						<div>
 							<label>Adresse Mail : </label>
 							<input type="text" placeholder="Entrez votre mail" name="mail" required>
-							<button class="btn" type="submit" value="OK">Envoyer un mail</button>
+							<button class="signupbtn" type="submit" value="OK">Envoyer un mail</button>
 								<br><a href="" class="quit" type="button" id="cancelbtn">Fermer</a>
 							<?php
 							echo '<input style="display:none;" name="url" value="'.$url.'"/>';

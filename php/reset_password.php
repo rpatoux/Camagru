@@ -1,14 +1,14 @@
 <?php
 session_start();
-//  if (!$_SESSION['code'])
-// 	 header('location:accueil.php');
- var_dump($_SESSION['code']);
+$url = $_SERVER[REQUEST_URI];
 $url_2 = explode('/', $_SERVER[REQUEST_URI]);
-$t_url = $url_2[3].$url_2[4];
-if (!file_exists($t_url))
+$_SESSION['url'] = 'http://localhost:8080'.'/'.$url_2[1].'/'.$url_2[2];
+if ($_GET['erreur'] == "404")
 {
-	header('location:'.$_SESSION['url']);
+	echo ("Une erreur est survenue, vous avez ete rediriger vers la page d'acceuil"); 
 }
+if ($url_2[2] == 'accueil.php' && $url_2[3])
+	header('location:'.$_SESSION['url']);
 ?>
 <html>
 	<head>
@@ -56,6 +56,8 @@ if (!file_exists($t_url))
 					echo '<br><div id="need_connect">Le mot de passe est trop court, minimum 6 caracteres</div>';
 				if ($_SESSION['error_new_p'] == 3)
 					echo '<br><div id="need_connect">Le mot de passe doit contenir que des chiffres et des lettres</div>';
+				if ($_SESSION['error_new_p'] == 4)
+					echo '<br><div id="need_connect">Le mot de passe doit contenir un ou deux chiffre</div>';
 				$_SESSION['error_new_p'] = 0;
 			?>
 			<br><br><br><br>
@@ -71,7 +73,7 @@ if (!file_exists($t_url))
 								$code = $_GET['code'];
 								echo '<input style="display:none;" name="code" value="'.$code.'">';
 							?>
-							<br><br><button class="btn" type="submit" value="OK">Changer le mot de passe</button>
+							<br><br><button class="signupbtn" type="submit" value="OK">Changer le mot de passe</button>
 						</div>
 					</form>
 				</div>
@@ -114,7 +116,7 @@ if (!file_exists($t_url))
 						<div>
 							<label>Adresse Mail</label>
 							<input type="text" placeholder="Entrez votre mail" name="mail" required>
-							<button class="btn" type="submit" value="OK">Envoyer un mail</button>
+							<button class="signupbtn" type="submit" value="OK">Envoyer un mail</button>
               				<a href="#" class="quit">Fermer</a>
 						</div>
 					</form>

@@ -62,6 +62,8 @@ if ($url_2[2] == 'mon_compte.php' && $url_2[3])
 								echo '<div class="error_mc" >le nouveau mot de passe doit faire 6 caracteres minimum</div><br>';
 							if ($_SESSION['error_np'] == 4)
 								echo '<div class="error_mc" >Le nouveau mot de passe doit contenir que des lettres et des chiffres</div><br>';
+							if ($_SESSION['error_np'] == 5)
+							echo '<div class="error_mc" >Le nouveau mot de passe doit etre différent de l ancien</div><br>';
 							if ($_SESSION['succes'] == 1)
 								echo '<div class="color-font" >Le mot de passe a ete change, felicitation</div><br>';
 							$_SESSION['error_np'] = 0;
@@ -73,7 +75,7 @@ if ($url_2[2] == 'mon_compte.php' && $url_2[3])
 						<input type="password" placeholder="Nouveau mot de passe" name="new_pass" required/>
 						<br><br><label class="color-font">Repetez le nouveau mot de passe : </label>
 						<input type="password" placeholder="Répétez mot de passe" name="new_pass_2" required/>
-						<br><br><button type="submit" value="OK">Changer le mot de passe</button>
+						<br><br><button class="button_sup4" type="submit" value="OK">Changer le mot de passe</button>
 					</div>
 				</form>
 				<br><h2>CHANGER MON IDENTIFIANT</h2>
@@ -100,7 +102,7 @@ if ($url_2[2] == 'mon_compte.php' && $url_2[3])
 						?>
 						<br><br><label class="color-font">Nouvel identifiant : </label>
 						<input type="identifiant" placeholder="Nouvel identifiant" name="new_ident" required>
-						<br><br><button class="btn" type="submit" value="OK">Changer mon identifiant</button>
+						<br><br><button class="button_sup4" type="submit" value="OK">Changer mon identifiant</button>
 					</div>
 				</form>
 				<br><h2>CHANGER MON ADRESSE MAIL</h2>
@@ -122,10 +124,10 @@ if ($url_2[2] == 'mon_compte.php' && $url_2[3])
 						?>
 						<br><br><label class="color-font">Nouvelle adresse mail : </label>
 						<input type="mail" placeholder="Nouvelle adresse mail" name="new_mail" required>
-						<br><br><button class="btn" type="submit" value="OK">Changer mon adresse mail</button>
+						<br><br><button class="button_sup4" type="submit" value="OK">Changer mon adresse mail</button>
 					</div>
 				</form>
-				<br><h2>SUPPRIMER UN COMPTE</h2>
+				<br><h2>SUPPRIMER MON COMPTE</h2>
 				<div class="nouveau_pass">
 				<?php
 						if ($_SESSION['error_su'] == 1)
@@ -133,7 +135,7 @@ if ($url_2[2] == 'mon_compte.php' && $url_2[3])
 						$_SESSION['error_su'] = 0;
 						?>
 					<form  action="delete_compte.php" method="post" target="_self" onsubmit="return confirm('Etes-vous sur de vouloir supprimer votre compte ?');">
-						<button class="btn" type="submit" value="OK">Supprimer mon compte</button>
+						<button class="button_sup3" type="submit" value="OK">Supprimer mon compte</button>
 					</form>
 				</div>
 				<?php
@@ -153,7 +155,8 @@ if ($url_2[2] == 'mon_compte.php' && $url_2[3])
 						?>
 						<form  action="compte_admin.php" method="post" target="_self" onsubmit="return confirm('Etes-vous sur de vouloir supprimer ce compte ?');">
 							<input type="identifiant" placeholder="compte a Supprimer" name="compte" required>
-							<button class="btn" type="submit" value="OK">SSUPPRIME UN COMPTE</button>
+							<br>
+							<button class="button_sup3" type="submit" value="OK">Supprimer un compte</button>
 						</form>
 					</div>
 					<?}?>

@@ -49,7 +49,7 @@
 					<li><a  draggable="false" href="galerie.php">Galerie</a></li>
 				</ul>
 			</div>
-			<div align="center" class="all" id="all">
+			<div>
 				<div class="image_montage">
 
 				<?php 
@@ -69,7 +69,7 @@
 					<br><input type="radio" name="tail" value="100" onclick="get_size('100')">  SMALL
 					<input type="radio" name="tail" value="150" onclick="get_size('150')">  LARGE
 				</div>
-				<div>
+				<div class="div_montage">
 					<div class="montage" id="placehere">
 					<?php 
 						include 'image.php';
@@ -85,8 +85,8 @@
 						}
 						while ($res[--$i]['img'])
 						{
-							echo '<div class="button_supimg2"><button type="submit" onclick="sub_img(this)">X</button>';
-							echo '<img draggable="false" src="'.$res[$i]['img'].'"></div><br>';
+							echo '<div class="button_supimg"><button type="submit" onclick="sub_img(this)">X</button>';
+							echo '<img  draggable="false" src="'.$res[$i]['img'].'"></div><br>';
 						}
 					?>
 					</div>

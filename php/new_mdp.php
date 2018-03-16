@@ -16,7 +16,6 @@ function wrong_password($password)
 	}
 	return true;
 }
-
 $user = $_SESSION['user'];
 $_SESSION['error_np'] = 0;
 $_SESSION['succes'] = 0;
@@ -25,7 +24,8 @@ if (isset($_POST['ancien_pass']) && isset($_POST['new_pass']) && isset($_POST['n
 	$ancien_pass = hash('whirlpool', $_POST['ancien_pass']);
 	$new_pass = $_POST['new_pass'];
 	$new_pass_2 = $_POST['new_pass_2'];
-	try{
+	try
+	{
 		$query= $db->prepare('SELECT password FROM user WHERE user=:user');
 		$query->execute(array(':user' => $user));
 		$res = $query->fetch();
@@ -41,6 +41,11 @@ if (isset($_POST['ancien_pass']) && isset($_POST['new_pass']) && isset($_POST['n
 	else if ($new_pass != $new_pass_2)
 	{
 		$_SESSION['error_np'] = 2;
+		header('location:mon_compte.php');
+	}
+	else if ($ancien_pass = $new_pass)
+	{
+		$_SESSION['error_np'] = 5;
 		header('location:mon_compte.php');
 	}
 	else if (wrong_password($new_pass))
