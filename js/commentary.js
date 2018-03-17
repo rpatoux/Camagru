@@ -8,6 +8,7 @@ var j_com = new Array();
 
 function sub_commentaire(objet)
 {
+	console.log("mec");
 	var id = objet.id;
 	var parent = objet.parentNode;
 	var xhr = getXMLHttpRequest();
@@ -126,6 +127,7 @@ function sub_img(objet)
 function add_comment(objet)
 {
 	var xhr = getXMLHttpRequest();
+	console.log(xhr);
 
 	var parent = objet.parentNode.parentNode;
 	if (!parent.childNodes[1].src)

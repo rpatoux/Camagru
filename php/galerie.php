@@ -148,7 +148,7 @@ if ($url_2[2] == 'galerie.php' && $url_2[3])
 									{
 										echo '<div class="comentaire_photo" id="comentaire_photo">';
 										if ($user == $comment[$j]['user'] || $user == 'root')
-											echo '<button class="button_supimg2" id="'.$comment[$j]['id'].'" type="submit" onclick="sub_comm~/http/bin/mysql.server reset-passentaire(this)">X</button>';
+											echo '<button class="button_supimg2" id="'.$comment[$j]['id'].'" type="submit" onclick="sub_commentaire(this)">X</button>';
 										echo '<b class="comentaire_photo">'.$comment[$j]['user'].' :</b> '.$comment[$j]['comments'].'</div><br>';
 									}
 								}

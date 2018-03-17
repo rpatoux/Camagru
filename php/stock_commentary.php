@@ -37,8 +37,6 @@ if(isset($_POST['img']) && isset($_POST['text']))
 		{
 			die("Erreur ! : ".$e->getMessage() );
 		}
-		echo($user);
-		echo($user_img);
 		if ($user != $user_img)
 		{
 			$mail = get_mail_by_user($user_img);
