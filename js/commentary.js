@@ -126,7 +126,6 @@ function sub_img(objet)
 function add_comment(objet)
 {
 	var xhr = getXMLHttpRequest();
-	console.log(xhr);
 
 	var parent = objet.parentNode.parentNode;
 	if (!parent.childNodes[1].src)
@@ -176,16 +175,12 @@ function add_like(objet)
     img = '/montage/'+img[4];
 	img = '..'+img;
 	var xhr = getXMLHttpRequest();
-	//console.log("1");
 	xhr.onreadystatechange = function()
 	{
-		//console.log("2");
 		if(xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0))
 		{
-			//console.log("3");
 			if (xhr.responseText > 0)
 			{
-				//console.log("4");
 				objet.value = 'j\'aime plus';
 				objet.setAttribute('id', 'dislikee');
 				objet.setAttribute('class', 'dislike');
@@ -194,13 +189,11 @@ function add_like(objet)
 			}
 			else if (xhr.responseText === 'no')
 			{
-				//console.log("5");
 				window.scrollTo(0,0);
 				need_connect();
 			}
 		}
 	}
-	//console.log("6");
 	xhr.open("POST", "stock_like.php", true); // true pour asynchrone
 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	xhr.send('img='+img+'&add=1');

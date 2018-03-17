@@ -146,10 +146,10 @@
 						</div>
 						<div class="valide_photo2">
 							<canvas id="canvas2"></canvas>
-							<br/><button id="startbutton2" name="photo" value="ok">Prendre une photo</button>
-							<button id="upload_photo">Telecharger une image</button>
+							<br/><button class="signupbtn" id="startbutton2" name="photo" value="ok">Prendre une photo</button>
+							<button class="signupbtn" id="upload_photo">Telecharger une image</button>
 							<br><img id="photo2">
-							<br><button id="valide2" >Publier</button>
+							<br><button class="signupbtn"  id="valide2" >Publier</button>
 						</div>
 						<div id="up_form" class="shadow">
 							<div class="form">
@@ -158,7 +158,7 @@
 									<input type="file" name="up_photo">
 									<input type="hidden" name="MAX_FILE_SIZE" value="1000000">
 									   <br><br>
-									<button type="submit" id="send_photo" name="envoyer">Envoyer l'image</button>
+									<button class="signupbtn" type="submit" id="send_photo" name="envoyer">Envoyer l'image</button>
 									<br><br>
 									<a href="" class="quit" type="button" id="cancelbtn">Fermer</a>
 								</form> 

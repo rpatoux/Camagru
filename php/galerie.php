@@ -60,7 +60,7 @@ if ($url_2[2] == 'galerie.php' && $url_2[3])
 				if ($_SESSION['succes_new_p'] == 1)
 					echo '<br><div id="connec_ok">Votre mot de passe a ete réinitialiser</div>';
 				if ($_SESSION['error_mail'] == 1)
-					echo '<br><div id="need_connect">Ce mail n\'existe pas !</div>';
+					echo '<br><div id="connec_ok" >Ce mail n\'existe pas !</div>';
 				if ($_SESSION['succes_mail'] == 1)
 					echo '<br><div id="connec_ok">Un mail de reinitialisaton de mot de passe viens de vous être envoyé !</div>';
 				if ($_SESSION['valid'] == 1)
@@ -148,7 +148,7 @@ if ($url_2[2] == 'galerie.php' && $url_2[3])
 									{
 										echo '<div class="comentaire_photo" id="comentaire_photo">';
 										if ($user == $comment[$j]['user'] || $user == 'root')
-											echo '<button class="button_supimg2" id="'.$comment[$j]['id'].'" type="submit" onclick="sub_commentaire(this)">X</button>';
+											echo '<button class="button_supimg2" id="'.$comment[$j]['id'].'" type="submit" onclick="sub_comm~/http/bin/mysql.server reset-passentaire(this)">X</button>';
 										echo '<b class="comentaire_photo">'.$comment[$j]['user'].' :</b> '.$comment[$j]['comments'].'</div><br>';
 									}
 								}

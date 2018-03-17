@@ -11,18 +11,6 @@ if (isset($_POST['img']) && isset($_POST['add']))
 	$user_likes = get_user_likes_by_img($img);
 	$likes = get_likes_by_img($img);
 	$id = get_id_img_by_img($img);
-	// echo ($user);
-	// echo "\n";
-	// echo ($add);
-	// echo "\n";
-	// echo ($img);
-	// echo "\n";
-	// echo ($user_likes);
-	// echo "\n";
-	// echo ($likes);
-	// echo "\n";
-	// echo ($id);
-	// exit;
 	if ($user)
 	{
 		if (!preg_match('/;'.$user.';/', $user_likes) && $add == '1')

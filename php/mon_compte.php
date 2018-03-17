@@ -63,9 +63,9 @@ if ($url_2[2] == 'mon_compte.php' && $url_2[3])
 							if ($_SESSION['error_np'] == 4)
 								echo '<div class="error_mc" >Le nouveau mot de passe doit contenir que des lettres et des chiffres</div><br>';
 							if ($_SESSION['error_np'] == 5)
-							echo '<div class="error_mc" >Le nouveau mot de passe doit etre différent de l ancien</div><br>';
+								echo '<div class="error_mc" >Le nouveau mot de passe doit etre different de l ancien</div><br>';
 							if ($_SESSION['succes'] == 1)
-								echo '<div class="color-font" >Le mot de passe a ete change, felicitation</div><br>';
+								echo '<div class="color-font" >Le mot de passe a ete change, félicitation</div><br>';
 							$_SESSION['error_np'] = 0;
 							$_SESSION['succes'] = 0;
 						?>
@@ -127,17 +127,21 @@ if ($url_2[2] == 'mon_compte.php' && $url_2[3])
 						<br><br><button class="button_sup4" type="submit" value="OK">Changer mon adresse mail</button>
 					</div>
 				</form>
-				<br><h2>SUPPRIMER MON COMPTE</h2>
-				<div class="nouveau_pass">
 				<?php
-						if ($_SESSION['error_su'] == 1)
-							echo '<div class="error_mc" >Vous ne pouvez pas supprimer le compte ADMIN</div><br>';
-						$_SESSION['error_su'] = 0;
-						?>
-					<form  action="delete_compte.php" method="post" target="_self" onsubmit="return confirm('Etes-vous sur de vouloir supprimer votre compte ?');">
-						<button class="button_sup3" type="submit" value="OK">Supprimer mon compte</button>
-					</form>
-				</div>
+					if ($user != 'root')
+					{?>
+				<br><h2>SUPPRIMER MON COMPTE</h2>
+					<div class="nouveau_pass">
+				<?php
+							if ($_SESSION['error_su'] == 1)
+								echo '<div class="error_mc" >Vous ne pouvez pas supprimer le compte ADMIN</div><br>';
+							$_SESSION['error_su'] = 0;
+							?>
+						<form  action="delete_compte.php" method="post" target="_self" onsubmit="return confirm('Etes-vous sur de vouloir supprimer votre compte ?');">
+							<button class="button_sup3" type="submit" value="OK">Supprimer mon compte</button>
+						</form>
+					</div>
+					<?}?>
 				<?php
 					if ($user == 'root')
 					{?>

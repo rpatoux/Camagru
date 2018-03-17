@@ -79,7 +79,7 @@
 				if ($_SESSION['succes_new_p'] == 1)
 					echo '<br><div id="connec_ok">Votre mot de passe a ete réinitialiser</div>';
 				if ($_SESSION['error_mail'] == 1)
-					echo '<br><div id="need_connect">Ce mail n\'existe pas !</div>';
+					echo '<br><div id="connec_ok">Ce mail n\'existe pas !</div>';
 				if ($_SESSION['succes_mail'] == 1)
 					echo '<br><div id="connec_ok">Un mail de reinitialisaton de mot de passe viens de vous être envoyé !</div>';
 				if ($_SESSION['valid'] == 1)

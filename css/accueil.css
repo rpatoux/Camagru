@@ -208,36 +208,9 @@ ul
 	width : 1750px;
 	/* min-width : 850px; */
 }
-/* 
-@media all and (max-width: 790px)
-{
-	.galerie
-	{
-		width : 100%;
-	}
-	.ensemble_photo
-	{
-		width : 400px;
-	}
-	.menu
-	{
-		padding-top: 30px;
-		padding-bottom: 10px;
-		height : 230px;
-	}
-	.menu p
-	{
-		color : white;
-		font-size: 25px;
-		position : absolute;
-		top : 200px;
-		right : 0px;
-	}
-	.menu a
-	{
-		display : block;
-	}
-} */
+
+/*@media all and (max-width: 790px)*/
+
 
 .menu2
 {
@@ -263,6 +236,7 @@ menu2 a:hover:not(.active)
 
 .menu2 a
 {
+	
     z-index: 3;
     display: block;
     color: white;
@@ -424,232 +398,13 @@ button:hover
 	height : 750px;
 	margin-right : 150px;
 }
-@media all and (max-width: 500px)
-{
-	.all
-	{
-		width :500px;
-	}
-	.menu2
-	{
-		width : 500px;
-	}
-	#phrase
-	{
-		font-size: 20px;
-	}
-	#logofond
-	{
-		width : 200px;
-	}
-	.mycompte
-	{
-		width : 100%;
-		font-size: 30px;
-		margin : 0;
-		padding: 0;
-	}
-	menu2
-	{
-		width : 100px;
-	}
-	ul
-	{
-		width : 600px;
-	}
-	li
-	{
-		width : 25%;
-	}
-	a
-	{
-		width : 25%;
-	}
-	.div_montage
-	{
-		width :500px;
-		height : 300px;
-	}
-	#placehere.montage
-	{
-		width: 400px;
-		height : 400px;
-		margin-right : 20px;
-	}
-	#container
-	{
-		display: block;
-		margin-bottom : 250px;
-		margin-left : 100px;
-	}
-	.photo_bouton 
-	{
-		margin-top: 20px;
-		float: left;
-		width: 50px;
-		height: 50px;
-	}
-	.image_montage
-	{
-		min-width : 100px;
-	}
-	#superpose 
-	{
-		width : 200px;
-	}
-	.montage
-	{
-		left : -40px;
-	}
-	.button_supimg
-	{
-		text-align: right;
-		width : 400px;
-		
-	}
-	#contenu
-	{
-		margin-bottom : 200px;
-	}
-}
 
-@media all and (min-width: 980px) and (max-width: 1410px)
-{
-	#placehere.montage
-	{
-		width : 80%;
-		height : 400px;
-		margin-left : 100px;
-		margin-right : 60px;
-	}
-	.button_supimg
-	{
-		text-align: right;
-		width : 400px;
-		
-	}
-	#container.container
-	{
-		width : 80%;
-		margin-left : 12%;
-	}
-}
-@media all and (min-width: 500px) and (max-width: 980px)
-{
-	.all
-	{
-		width :980px;
-	}
-	.menu2
-	{
-		width : 980px;
-	}
-	#phrase
-	{
-		font-size: 30px;
-	}
-	#logofond
-	{
-		width : 300px;
-	}
-	.mycompte
-	{
-		width : 100%;
-		font-size: 50px;
-		margin : 0;
-		padding : 0;
-	}
-	menu2
-	{
-		width : 100px;
-	}
-	ul
-	{
-		width : 100%;
-	}
-	li 
-	{
-		width : 23%;
-	}
-	.div_montage
-	{
-		width :980px;
-		height : 300px;
-	}
-	#placehere.montage
-	{
-		width: 700px;
-		height : 400px;
-		margin-right : 100px;
-	}
-	#container
-	{
-		display: block;
-		margin-bottom : 250px;
-		margin-left : 250px;
-	}
-	#superpose 
-	{
-		width : 600px;
-	}
-	.montage
-	{
-		left : -100px;
-	}
-	.button_supimg
-	{
-		text-align: right;
-		width : 400px;
-		
-	}
-	#contenu
-	{
-		margin-bottom : 200px;
-	}
-}
 
-/* #placehere.montage
-{
-	width : 500px;
-} */
 
 /* @media all and (max-width: 850px)
-{
-	.montage
-	{
-		padding: 0; 
-	}
-} */
-/* 
+
 @media all and (max-width: 790px)
-{
-	.galerie
-	{
-		width : 100%;
-	}
-	.ensemble_photo
-	{
-		width : 400px;
-	}
-	.menu
-	{
-		padding-top: 30px;
-		padding-bottom: 10px;
-		height : 240px;
-	}
-	.menu p
-	{
-		color : white;
-		font-size: 25px;
-		position : absolute;
-		top : 200px;
-		right : 0px;
-	}
-	.menu a
-	{
-		display : block;
-	}
-} */
+
 
 /* Extra styles for the cancel button */
 #cancelbtn 
@@ -754,29 +509,6 @@ Change styles for cancel button and signup button on extra small screens
 	padding-bottom: 10px;
 	border-radius : 3px;
 }
-/* comentaire_photo
-{
-	
-	margin-top: 2px;
-	text-align: left;
-	padding-left: 30px;
-	color : white;
-	width : 200px;
-	font-size : 14px;
-	word-wrap: break-word;
-	border-bottom:1px dashed white;
-}
-.comentaire_photo_2
-{
-	margin-top: 2px;
-	text-align: left;
-	padding-left: 30px;
-	color : white;
-	width : 200px;
-	font-size : 14px;
-	word-wrap: break-word;
-	border-bottom:1px dashed white;
-} */
 
 .pdp_img
 {
@@ -794,7 +526,7 @@ Change styles for cancel button and signup button on extra small screens
 
 .date
 {
-	width : 35%;
+	width : 50%;
 	margin-top : 10px;
 	margin-bottom :10px;
 	color :white;
@@ -803,10 +535,15 @@ Change styles for cancel button and signup button on extra small screens
 }
 .date b
 {
-	color : black;
+	color : grey;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+#like 
+{
+	color : grey;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 #connec_ok
 {
 	background-color: rgba(255,255,255,0.7);
@@ -898,6 +635,8 @@ canvas
 	width : 50%;
 	min-width : 450px;
 	margin-top : 50px;
+	margin-left : 5%;
+	margin-bottom : 250px;
 }
 
 #pas_de_cam button
@@ -1016,6 +755,7 @@ canvas
 	width : 400px;
 	height : 300px;
 	overflow : hidden;
+	overflow-x: hidden;
 }
 
 #sup_img
@@ -1072,15 +812,6 @@ canvas
 	display : none;
 }
 
-/* #button
-{
-	background-color: #333;
-	color : white;
-	margin : 30px;
-	font-size : 12
-	cursor : pointer;
-} */
-
 .pdp
 {
 	border-radius: 2px;
@@ -1107,3 +838,216 @@ canvas
 	transform : translate(-50%, -50%);
 }
 
+@media all and (min-width: 980px) and (max-width: 1410px)
+{
+	#placehere.montage
+	{
+		width : 80%;
+		height : 400px;
+		margin-left : 100px;
+		margin-right : 60px;
+	}
+	.button_supimg
+	{
+		text-align: right;
+		width : 400px;
+		
+	}
+	#container.container
+	{
+		width : 80%;
+		margin-left : 12%;
+	}
+	#pas_de_cam
+	{
+		width : 80%;
+		margin-left : 12%;
+	}
+}
+
+
+@media all and (min-width: 500px) and (max-width: 980px)
+{
+	.all
+	{
+		width :980px;
+	}
+	.menu2
+	{
+		width : 980px;
+	}
+	#phrase
+	{
+		font-size: 30px;
+	}
+	#logofond
+	{
+		width : 300px;
+	}
+	.mycompte
+	{
+		width : 100%;
+		font-size: 50px;
+		margin : 0;
+		padding : 0;
+	}
+	menu2
+	{
+		width : 100px;
+	}
+	ul
+	{
+		width : 100%;
+	}
+	li 
+	{
+		width : 23%;
+	}
+	.div_montage
+	{
+		width :980px;
+		height : 300px;
+	}
+	#placehere.montage
+	{
+		width: 100%;
+		height : 400px;
+		margin : auto;
+	}
+	.div_montage 
+	{
+		width : 80%;
+	}
+	#container
+	{
+		width :100%;
+		display: block;
+		margin-bottom : 250px;
+		margin-left : 0;
+	}
+	#pas_de_cam
+	{
+		display: block;
+		margin-bottom : 250px;
+		margin-left : 10%;
+	}
+	#superpose 
+	{
+		width : 600px;
+	}
+	.montage
+	{
+		left : -100px;
+	}
+	.button_supimg
+	{
+		text-align: right;
+		width : 400px;
+		
+	}
+	#contenu
+	{
+		margin-bottom : 200px;
+	}
+}
+
+
+@media all and (max-width: 500px)
+{
+	#ensemble_photo.ensemble_photo
+	{
+		width : 75%;
+	}
+	.all
+	{
+		width :500px;
+	}
+	.menu2
+	{
+		width : 500px;
+	}
+	#phrase
+	{
+		font-size: 20px;
+	}
+	#logofond
+	{
+		width : 50%;
+	}
+	.mycompte
+	{
+		width : 100%;
+		font-size: 30px;
+		margin : 0;
+		padding: 0;
+	}
+	menu2
+	{
+		width : 100px;
+	}
+	ul
+	{
+		width : 600px;
+	}
+	li
+	{
+		font-size: 10px;
+		width : 20%;
+		height :40px;
+	}
+	.div_montage
+	{
+		width :500px;
+		height : 300px;
+	}
+	#placehere.montage
+	{
+		width: 100%;
+		height : 300px;
+		margin-left : 10px;
+		margin-bottom : 50px;
+		margin-right: 0;
+	}
+	#container.container
+	{
+		display: block;
+		margin-bottom : 250px;
+		width : 100%;
+		margin-left : 0;
+	}
+	#pas_de_cam
+	{
+		display: block;
+		margin-bottom : 250px;
+		margin : auto;
+	}
+	.photo_bouton 
+	{
+		margin-top: 20px;
+		float: left;
+		width: 50px;
+		height: 50px;
+	}
+	#superpose 
+	{
+		width : 100%;
+	}
+	.button_supimg
+	{
+		text-align: right;
+		width : 400px;
+		
+	}
+	#contenu
+	{
+		margin-bottom : 200px;
+	}
+	.image_montage
+	{
+		height : 400px;
+	}
+	.photo_bouton img
+	{
+		float : left;
+	}
+}

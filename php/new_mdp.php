@@ -23,6 +23,7 @@ if (isset($_POST['ancien_pass']) && isset($_POST['new_pass']) && isset($_POST['n
 {
 	$ancien_pass = hash('whirlpool', $_POST['ancien_pass']);
 	$new_pass = $_POST['new_pass'];
+	$new_pass_hash =hash('whirlpool', $_POST['new_pass']);
 	$new_pass_2 = $_POST['new_pass_2'];
 	try
 	{
@@ -43,7 +44,7 @@ if (isset($_POST['ancien_pass']) && isset($_POST['new_pass']) && isset($_POST['n
 		$_SESSION['error_np'] = 2;
 		header('location:mon_compte.php');
 	}
-	else if ($ancien_pass = $new_pass)
+	else if ($ancien_pass == $new_pass_hash)
 	{
 		$_SESSION['error_np'] = 5;
 		header('location:mon_compte.php');
